@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Akshay Gaddi | Senior Full-Stack Developer | React & Node.js Expert",
-  description: "Experienced Full-Stack Developer with 3+ years building scalable web applications. Specialized in React, TypeScript, Node.js, and cloud technologies. Available for remote opportunities.",
+  description: "Experienced Full-Stack Developer with 2+ years building scalable web applications. Specialized in React, TypeScript, Node.js, and cloud technologies. Available for remote opportunities.",
   keywords: [
     "full-stack developer", 
     "react developer", 

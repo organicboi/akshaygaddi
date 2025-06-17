@@ -125,7 +125,7 @@ export default function Home() {
   const achievements = [
     { icon: Award, text: '50+ Projects Delivered', color: 'from-amber-400 to-orange-500' },
     { icon: Star, text: '98% Client Satisfaction', color: 'from-emerald-400 to-teal-500' },
-    { icon: Zap, text: '3+ Years Experience', color: 'from-purple-400 to-pink-500' },
+    { icon: Zap, text: '2 + Years Experience', color: 'from-purple-400 to-pink-500' },
     { icon: Globe, text: 'Remote Work Expert', color: 'from-cyan-400 to-blue-500' }
   ];
 
@@ -226,7 +226,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="text-white"
             >
-              {/* Professional Status Card */}
+              {/* Professional Status Card with Real Photo */}
               <motion.div 
                 className="flex items-center gap-6 mb-10"
                 initial={{ opacity: 0, y: 20 }}
@@ -234,8 +234,14 @@ export default function Home() {
                 transition={{ delay: 0.3 }}
               >
                 <div className="relative">
-                  <div className="w-28 h-28 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-cyan-500/30 shadow-xl shadow-cyan-500/10">
-                    <User className="w-14 h-14 text-cyan-400" />
+                  {/* Professional Photo */}
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-cyan-500/30 shadow-xl shadow-cyan-500/20 relative">
+                    <img 
+                      src="/profile_pic.jpg" 
+                      alt="Akshay Gaddi - Professional Photo"
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent"></div>
                   </div>
                   <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs px-3 py-2 rounded-full flex items-center gap-2 shadow-lg">
                     <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></div>
@@ -251,7 +257,7 @@ export default function Home() {
                   <div className="flex items-center gap-3 text-gray-300">
                     <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                     <Clock className="w-4 h-4 text-amber-400" />
-                    <span className="font-medium">3+ Years Experience</span>
+                    <span className="font-medium">2+ Years Experience</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300">
                     <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
@@ -380,15 +386,20 @@ export default function Home() {
                 
                 <div className="relative z-10">
                   <div className="text-6xl mb-8">
-                    <div className="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-400 to-teal-400 rounded-2xl flex items-center justify-center shadow-xl shadow-cyan-500/25">
-                      <User className="w-10 h-10 text-white" />
+                    {/* Professional Photo in Card */}
+                    <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden shadow-xl shadow-cyan-500/25 border-2 border-cyan-400/50">
+                      <img 
+                        src="/profile_pic.jpg" 
+                        alt="Akshay Gaddi"
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
                   </div>
                   
                   <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
                     Professional Resume
                   </h3>
-                  <p className="text-gray-400 mb-8 text-lg">Updated January 2025</p>
+                  <p className="text-gray-400 mb-8 text-lg">Updated June 2025</p>
                   
                   {/* Achievement Grid */}
                   <div className="grid grid-cols-2 gap-6 mb-8">
@@ -692,17 +703,10 @@ export default function Home() {
                 Akshay Gaddi
               </h3>
               <p className="text-gray-400 mb-2">&copy; 2025 All rights reserved.</p>
-              <p className="text-gray-500">Resume last updated: January 2025</p>
+              <p className="text-gray-500">Resume last updated: June 2025</p>
             </div>
             
-            <div className="flex items-center gap-8">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/30 rounded px-2 py-1">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/30 rounded px-2 py-1">
-                Terms of Service
-              </a>
-            </div>
+            
           </div>
         </div>
       </footer>
