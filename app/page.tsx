@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Download, 
   Eye, 
@@ -39,7 +39,7 @@ interface Project {
 interface Skill {
   category: string;
   technologies: string[];
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 export default function Home() {
@@ -48,7 +48,6 @@ export default function Home() {
   const [isTyping, setIsTyping] = useState(false);
   const [currentTitle, setCurrentTitle] = useState('');
 
-  const titles = ['Full-Stack Developer', 'React Specialist', 'UI/UX Enthusiast'];
   const fullTitle = 'Full-Stack Developer';
 
   useEffect(() => {
@@ -127,21 +126,12 @@ export default function Home() {
   };
 
   const handleScheduleCall = () => {
-    window.open('mailto:amg.akshaygaddi@gmail.com?subject=Let\'s Schedule a Call&body=Hi Akshay, I\'d like to schedule a call to discuss opportunities.', '_blank');
+    window.open('mailto:amg.akshaygaddi@gmail.com?subject=Let%27s%20Schedule%20a%20Call&body=Hi%20Akshay,%20I%27d%20like%20to%20schedule%20a%20call%20to%20discuss%20opportunities.', '_blank');
   };
 
   const handleBackToHome = () => {
     setShowPDF(false);
   };
-
-  // Skeleton Loader Component
-  const SkeletonLoader = () => (
-    <div className="animate-pulse space-y-4">
-      <div className="bg-gray-300 h-6 rounded w-3/4"></div>
-      <div className="bg-gray-300 h-4 rounded w-1/2"></div>
-      <div className="bg-gray-300 h-4 rounded w-2/3"></div>
-    </div>
-  );
 
   if (showPDF) {
     return (
@@ -189,7 +179,7 @@ export default function Home() {
             </div>
             <p className="text-amber-800">For the best viewing experience on mobile devices:</p>
             <ul className="list-disc ml-5 text-amber-800 space-y-1">
-              <li>Tap "Download PDF" to save and open in your preferred PDF viewer</li>
+              <li>Tap &ldquo;Download PDF&rdquo; to save and open in your preferred PDF viewer</li>
               <li>Use pinch-to-zoom for better readability</li>
               <li>Rotate your device to landscape mode</li>
             </ul>
@@ -243,7 +233,7 @@ export default function Home() {
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="block text-xl md:text-2xl font-normal opacity-90 mb-2">Hello, I'm</span>
+                <span className="block text-xl md:text-2xl font-normal opacity-90 mb-2">Hello, I&apos;m</span>
                 <span className="block bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
                   Akshay Gaddi
                 </span>
@@ -363,7 +353,7 @@ export default function Home() {
                 </div>
 
                 <div className="text-sm text-white/70">
-                  "Passionate about creating exceptional digital experiences"
+                  &ldquo;Passionate about creating exceptional digital experiences&rdquo;
                 </div>
               </motion.div>
             </motion.div>
@@ -404,13 +394,13 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">{skill.category}</h3>
                 <div className="space-y-2">
-                  {skill.technologies.map((tech, techIndex) => (
+                  {skill.technologies.map((tech) => (
                     <motion.div
                       key={tech}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: (index * 0.1) + (techIndex * 0.05) }}
+                      transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-2 text-gray-600"
                     >
                       <CheckCircle className="w-4 h-4 text-green-500" />
@@ -471,7 +461,7 @@ export default function Home() {
                 )}
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
+                  {project.tech.map((tech) => (
                     <span
                       key={tech}
                       className="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded-md"
@@ -506,14 +496,14 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Let's Build Something Amazing</h2>
+            <h2 className="text-4xl font-bold mb-6">Let&apos;s Build Something Amazing</h2>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Ready to discuss your next project? I'd love to hear about your ideas and how we can bring them to life.
+              Ready to discuss your next project? I&apos;d love to hear about your ideas and how we can bring them to life.
             </p>
             
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <motion.a
-                href="mailto:amg.akshaygaddi@gmail.com?subject=Let's Collaborate&body=Hi Akshay, I'd like to discuss a project opportunity."
+                href="mailto:amg.akshaygaddi@gmail.com?subject=Let%27s%20Collaborate&body=Hi%20Akshay,%20I%27d%20like%20to%20discuss%20a%20project%20opportunity."
                 className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-full text-white transition-all duration-300 shadow-lg shadow-blue-500/25 focus:ring-4 focus:ring-blue-300"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
